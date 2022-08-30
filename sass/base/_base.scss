@@ -1,0 +1,53 @@
+*,
+a::after,
+a::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //Defines 1 rem
+  font-size: 62.5%; //1rem = 10px
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  background-color: #212121;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #14ffec;
+  margin: 0.5rem;
+  border-radius: 0.3rem;
+  border: solid 0.2rem #212121;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #81fff4;
+}
